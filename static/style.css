@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+a {
+    color: #fcb3ea;
+}
+
+h1 {
+    color: #fcb3ea;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+form input[type="text"] {
+    width: 70%;
+    padding: 8px;
+}
+
+form input[type="submit"] {
+    padding: 8px 12px;
+    background-color: #fcb3ea;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
