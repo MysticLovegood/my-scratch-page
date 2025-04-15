@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Welcome to My Portfolio</h1>
+<p>Hello! I’m MysticLovegood, an aspiring Cloud Engineer who is passionate about Cloud and DevOps.</p>
+<img src="{{ url_for('static', filename='photo.jpg') }}" alt="My photo" width="300">
+<ul>
+    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+    <li><a href="{{ url_for('index') }}">Home Page</a></li>
+</ul>
+{% endblock %}
