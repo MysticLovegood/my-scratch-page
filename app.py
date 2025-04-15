@@ -7,7 +7,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from config import Config
 from dotenv import load_dotenv
 
-# Initialize the Flask app and SQLAlchemy
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -21,13 +20,12 @@ login_manager.login_view="login"
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if current_user.is_authenticated:
-            new_comment = Comment(text=request.form['comment'], user_id=current_user.id)
-            db.session.add(new_comment)
+           new_comment = Comment(text=request.form['comment'], user_id=current_user.id)
+           db.session.add(new_comment)
             db.session.commit()
             return redirect(url_for('index'))
         else:

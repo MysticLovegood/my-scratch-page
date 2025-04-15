@@ -5,4 +5,4 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:password@localhost:3306/portfoliowebapp'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://<username>:<password>@localhost:3306/portfoliowebapp'
