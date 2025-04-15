@@ -5,7 +5,6 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from models import db, User, Comment
 from werkzeug.security import generate_password_hash, check_password_hash
 from config import Config
-from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -24,8 +23,8 @@ def load_user(user_id):
 def index():
     if request.method == 'POST':
         if current_user.is_authenticated:
-           new_comment = Comment(text=request.form['comment'], user_id=current_user.id)
-           db.session.add(new_comment)
+            new_comment = Comment(text=request.form['comment'], user_id=current_user.id)
+            db.session.add(new_comment)
             db.session.commit()
             return redirect(url_for('index'))
         else:
